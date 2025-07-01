@@ -1,0 +1,21 @@
+<div class="merchant-container" *ngIf = "hero">
+  <h1>🧙‍♂️ Merchant</h1>
+  <p class="merchant-subtext">Welcome, traveler. Spend your tokens wisely...</p>
+  <div class="token-count">Your Tokens: {{ hero.heroTokens }}</div>
+
+  <div class="item-grid">
+    <div class="item-card" *ngFor="let item of itemsForSale">
+      <div class="item-name">{{ item.name }}</div>
+      <div class="item-description">{{ item.description }}</div>
+      <div class="item-price">Cost: {{ item.price }} 🔑</div>
+      <button 
+        class="buy-button" 
+        [disabled]="hero.heroTokens < item.price" 
+        (click)="buyItem(item)"
+      >
+        Buy
+      </button>
+    </div>
+  </div>
+  <app-back-button></app-back-button>
+</div>

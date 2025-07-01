@@ -1,0 +1,81 @@
+.merchant-container {
+  text-align: center;
+  padding: 2rem;
+  color: #fff;
+}
+
+.merchant-subtext {
+  color: #bbb;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.token-count {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #ffc107;
+}
+
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.item-card {
+  background-color: #1e1e28;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #444;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.item-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.item-description {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.item-price {
+  color: #ffa500;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+
+.buy-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.buy-button:disabled {
+  background-color: #888;
+  cursor: not-allowed;
+}
+
+.back-button {
+  margin-top: 2rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.back-button:hover {
+  background-color: #555;
+}

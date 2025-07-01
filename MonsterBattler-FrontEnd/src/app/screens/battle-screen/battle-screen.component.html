@@ -1,0 +1,26 @@
+<div class="battle-wrapper">
+
+  <!-- Battle header and monster info -->
+  <div class="battle-main-content">
+    <div class="battle-header">
+      <h2>🌌 Portal: {{ portalName }}</h2>
+    </div>
+
+    <div class="monster-info-section">
+      <div class="monster-details">
+        <div class="monster-name">{{ monsterService.monster.name }}</div>
+        <div>Lv: {{ monsterService.monster.level }}</div>
+        <div class="hp-bar">
+          <span>HP:</span>
+          <div class="bar">
+            <div class="fill" [style.width.%]="getMonsterHpPercent()"></div>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <div class="monster-image">
+        <div class="image-placeholder"></div>
+      </div>
+  </div>
+
+  <app-battle-options></app-battle-options>

@@ -1,0 +1,18 @@
+<div class="camp-container">
+  <h1>🌙 Camp</h1>
+  <p class="camp-subtext">Choose a portal to begin your next battle...</p>
+
+  <div class="portal-grid">
+    <div 
+      class="portal-card" 
+      *ngFor="let portal of portals" 
+      (click)="enterPortal(portal)"
+    >
+      <div class="portal-icon">{{ portal.icon }}</div>
+      <div class="portal-name">{{ portal.name }}</div>
+      <div class="portal-difficulty">Difficulty: {{ portal.difficulty }}</div>
+    </div>
+  </div>
+  <app-merchant-card></app-merchant-card>
+</div>
+

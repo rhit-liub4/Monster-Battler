@@ -1,0 +1,65 @@
+<app-back-button></app-back-button>
+<div class="hero-container" *ngIf="hero">
+  <h2>🧙 Hero Overview</h2>
+
+  <div class="hero-top">
+    <img class="avatar" src="assets/hero.png" alt="Hero Avatar" />
+    <div class="hero-info">
+      <h3>{{ hero.heroName }}</h3>
+
+      <div class="health-bar">
+        <div class="health-fill" [style.width.%]="hero.heroHealth"></div>
+        <span>{{ hero.heroHealth }} / {{hero.heroMaxHealth}}</span>
+      </div>
+
+      <div class="tokens">
+        🔑 Tokens: <strong>{{ hero.heroTokens }}</strong>
+      </div>
+    </div>
+  </div>
+  <div cdkDropListGroup>
+
+    <div class="equipment-container">
+      <div class="equipment-slot" cdkDropList id="leftHandDrop" [cdkDropListConnectedTo]="['inventoryDrop']"
+        (cdkDropListDropped)="equipItem($event, 'left')">
+        <h4>🖐️ Left Hand</h4>
+        <div *ngIf="heroService.leftHand.length > 0; else emptyLeft">
+          <div class="inventory-item" [title]="heroService.leftHand[0].description" cdkDrag
+            [cdkDragData]="{ item: heroService.leftHand[0], source: 'left' }">
+            <img [src]="heroService.leftHand[0].icon" />
+            <span>{{ heroService.leftHand[0].name }}</span>
+          </div>
+        </div>
+        <ng-template #emptyLeft>
+          <div class="equipment-empty">Drop item here</div>
+        </ng-template>
+      </div>
+
+      <div class="equipment-slot" cdkDropList id="rightHandDrop" [cdkDropListConnectedTo]="['inventoryDrop']"
+        (cdkDropListDropped)="equipItem($event, 'right')">
+        <h4>✋ Right Hand</h4>
+        <div *ngIf="heroService.rightHand.length > 0; else emptyRight">
+          <div class="inventory-item" [title]="heroService.rightHand[0].description" cdkDrag
+            [cdkDragData]="{ item: heroService.rightHand[0], source: 'right' }">
+            <img [src]="heroService.rightHand[0].icon" />
+            <span>{{ heroService.rightHand[0].name }}</span>
+          </div>
+        </div>
+        <ng-template #emptyRight>
+          <div class="equipment-empty">Drop item here</div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+
+  <div class="inventory-container" cdkDropList id="inventoryDrop"
+    [cdkDropListConnectedTo]="['leftHandDrop', 'rightHandDrop']" (cdkDropListDropped)="equipItem($event, 'inventory')">
+    <h4>🎒 Inventory</h4>
+    <div class="inventory-item" *ngFor="let item of heroService.gameItems" [title]="item.description" cdkDrag
+      [cdkDragData]="{item: item, source: 'inventory'}" (contextmenu) = "useItem($event, item)">
+      <img [src]="item.icon"/>
+      <span>{{ item.name }}</span>
+    </div>
+  </div>
+
+</div>

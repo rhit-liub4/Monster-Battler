@@ -1,0 +1,33 @@
+<div class="bottom-ui-wrapper">
+  <div class="encounter-message">
+    {{ this.encounterBoxService.encounterBoxText }}
+  </div>
+
+  <div class="bottom-interaction-area">
+    <div class="bottom-left">
+      <div class="solve-box">
+        <p class="solve-title">Solve to Attack Monster</p>
+        <div class="problem">
+          {{ this.mathChallenge?.question }} =
+          <input [(ngModel)]="playerAnswer" type="number" (keyup.enter)="submitAnswer()" />
+          <button (click)="submitAnswer()">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-right">
+      <div class="other-options" *ngIf = "!(this.monsterDefeated)">
+        <p class="other-options-title">Other Options</p>
+        <button (click)="talk()">Talk</button>
+        <button (click)="usePowers()">Powers</button>
+        <button (click)="run()">Run</button>
+      </div>
+
+      <div class="other-options" *ngIf = "(this.monsterDefeated)">
+        <p class="other-options-title">Other Options</p>
+        <button (click)="this.goBackToCamp()">Back to Camp</button>
+        <button (click)="nextMonster()">Next Monster</button>
+      </div>
+    </div>
+  </div>
+</div>

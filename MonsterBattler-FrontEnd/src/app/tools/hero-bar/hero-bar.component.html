@@ -1,0 +1,27 @@
+<div class="player-bar" (click)="goToHeroScreen()" *ngIf="hero">
+  <div class="player-stat">
+    👤 {{ hero.heroName }}
+  </div>
+  <div class="player-stat">
+    ❤️ {{ hero.heroHealth }} / {{hero.heroMaxHealth}}
+  </div>
+  <div class="player-stat">
+    🔑 {{ hero.heroTokens }}
+  </div>
+  <div class="player-stat">
+  🖐️ Left: 
+
+   <!-- <img *ngIf = "heroService.leftHand[0]" [src]="heroService.leftHand[0].icon"/> -->
+  <span *ngIf="heroService.leftHand.length > 0">{{ heroService.leftHand[0].name }}</span>
+  <span *ngIf="heroService.leftHand.length === 0">None</span>
+</div>
+<div class="player-stat">
+  ✋ Right: 
+  <!-- <img *ngIf = "heroService.rightHand[0]" [src]="heroService.rightHand[0].icon"/> -->
+  <span *ngIf="heroService.rightHand.length > 0">{{ heroService.rightHand[0].name }}</span>
+  <span *ngIf="heroService.rightHand.length === 0">None</span>
+</div>
+
+
+    
+</div>

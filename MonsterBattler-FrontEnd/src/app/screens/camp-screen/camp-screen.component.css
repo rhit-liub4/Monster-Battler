@@ -1,0 +1,47 @@
+.camp-container {
+  text-align: center;
+  padding: 2rem;
+  color: #fff;
+}
+
+.camp-subtext {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #aaa;
+}
+
+.portal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.portal-card {
+  background: #1f1f2b;
+  padding: 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.portal-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.2);
+}
+
+.portal-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.portal-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.portal-difficulty {
+  color: #ccc;
+  margin-top: 0.5rem;
+}

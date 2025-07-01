@@ -1,0 +1,9 @@
+.merchant-card {
+  background: #2d2d3a;
+  border: 2px solid #5ecfff;
+  margin-block: 20px;
+}
+
+.merchant-card:hover {
+  box-shadow: 0 0 18px #5ecfff;
+}

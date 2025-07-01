@@ -1,0 +1,124 @@
+.bottom-ui-wrapper {
+  position: fixed;
+  bottom: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #0c0c14;
+  border-top: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.encounter-message {
+  background-color: #d3d3d3;
+  color: #000;
+  text-align: center;
+  padding: 0.5rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.bottom-interaction-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.bottom-left, .bottom-right {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.solve-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.solve-title {
+  margin: 0 0 0 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+}
+
+.problem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.problem input {
+  width: 60px;
+  text-align: center;
+  padding: 0.2rem;
+  font-size: 1rem;
+}
+
+.problem button {
+  background-color: #5555ff;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.other-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.other-options button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .bottom-interaction-area {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .encounter-message {
+    font-size: 1.2rem;
+  }
+
+  .other-options button {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .problem {
+    justify-content: center;
+  }
+}
+
+.other-options-title {
+  margin: 0 0 0 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+

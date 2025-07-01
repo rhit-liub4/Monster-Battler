@@ -1,0 +1,83 @@
+.battle-header {
+  background-color: #2a2a3b;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.3rem;
+}
+.monster-info-section {
+  position: fixed;
+  left: -5px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #3a3a4d;
+  padding: 1rem;
+  margin: 0.5rem auto; /* center the container horizontally */
+  color: #fff;
+  width: 25%;         /* 👈 limit to half screen */
+  border-radius: 8px; /* optional: just makes it look cleaner */
+}
+
+
+.monster-details {
+  flex: 1;
+}
+
+.monster-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.hp-bar .bar {
+  width: 100px;
+  height: 10px;
+  background-color: #555;
+  margin-top: 4px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.hp-bar .fill {
+  height: 100%;
+  background-color: limegreen;
+  transition: width 0.3s ease;
+}
+
+.hp-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* spacing between "HP:" and the bar */
+  margin-top: 5px;
+}
+
+.hp-bar .bar {
+  width: 100px;
+  height: 12px;
+  background-color: #555;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+
+
+.monster-image .image-placeholder {
+  position: fixed;
+  right: 100px;
+  width: 200px;
+  height: 200px;
+  background-color: #ccc;
+  margin: 0.5rem auto; /* center the container horizontally */
+}
+
+/* This wraps the whole battle screen content */
+.battle-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 93vh;
+  background-color: #1f1f2f;
+}
+
+/* Main content area grows to push footer down */
+.battle-main-content {
+  flex: 1;
+}

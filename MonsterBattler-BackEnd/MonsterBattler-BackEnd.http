@@ -1,0 +1,6 @@
+@MonsterBattler_BackEnd_HostAddress = http://localhost:5160
+
+GET {{MonsterBattler_BackEnd_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
